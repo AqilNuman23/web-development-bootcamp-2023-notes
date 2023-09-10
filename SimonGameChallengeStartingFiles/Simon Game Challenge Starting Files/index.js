@@ -1,7 +1,32 @@
-function nextSequence() {
-    // var randomNumber = Math.random(); randomNumber = Math.floor(randomNumber);
-    // which can be simplified to..
-    var randomNumber = Math.floor(Math.random() * 4);
-    // why times 4? because it would round number down than or equal to the number which is <4.. So we would get a random 0-3 number.
+var buttonColours = ["red", "blue", "green", "yellow"];
 
+var gamePattern = [];
+
+var userClickedPattern = [];
+
+$(".btn").click(function() {
+
+    var userChosenColour = $(this).attr("id");
+    userClickedPattern.push(userChosenColour);
+});
+
+function nextSequence() {
+    
+    var randomNumber = Math.floor(Math.random() * 4);
+    
+    var randomChosenColour = buttonColours[randomNumber];
+
+    gamePattern.push(randomChosenColour);
+ 
+    $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+
+    playSound(randomChosenColour);
+};
+
+function playSound(name) {
+
+    var audio = new Audio("sounds/" + name + ".mp3");
+    audio.play();
 }
+
+
