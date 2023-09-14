@@ -55,6 +55,13 @@ span {
     margin-bottom: 30px;
     text-align: justify;
   }
+
+  .card img {
+    margin-bottom: 10px;
+    width: 100%;
+    display: inline;
+    object-fit: cover;
+  }
 }
 
 @media (min-width: 600px) {
