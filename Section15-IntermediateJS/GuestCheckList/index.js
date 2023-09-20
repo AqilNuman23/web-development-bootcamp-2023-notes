@@ -48,3 +48,17 @@ fizzbuzz();
 fizzbuzz();
 fizzbuzz();
 fizzbuzz();
+
+
+// write a function which will select a random name from a list of names. The person selected will have to pay for everybody's food bill.
+const names = ["Angela", "Ben", "Jenny", "Michael", "Chloe"];
+
+const whosPaying = () => {
+    let randomIndex = Math.floor(Math.random() * names.length);
+    let randomNames = names[randomIndex];
+    
+    return randomNames + " is going to buy lunch today!";
+};
+
+const result = whosPaying();
+console.log(result);
